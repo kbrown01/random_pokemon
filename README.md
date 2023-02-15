@@ -236,6 +236,9 @@ sequence:
 mode: single
 ```
 
+Now, you can at your choice for the kids create an *automation* that calls the *script* in "Random" mode as you wish ... daily, hourly, whatever.
+And you still do not break the interface ... but you should call the script directly so that the input_select name is updated.
+
 ## The GUI
 
 The remaining stuff is the GUI. We have sensors with lots of data we can use.
