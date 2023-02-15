@@ -13,9 +13,11 @@ What we are building is shown here:
 ![img/pokepanel.png](img/pokepanel.png)
 
 There are several components in this interface.
-Across the top, you can navigate to previous and next Pokemon based on the National ID.
-You can "roll the dice" and grab a random pokemon whose ID ranges from 1 to 1008.
-You can even select a specific Pokemon by name.
+Across the top it has four "modes":
+- You can navigate to previous Pokemon based on the National ID.
+- You can navigate to next Pokemon based on the National ID.
+- You can "roll the dice" and grab a random pokemon whose ID ranges from 1 to 1008.
+- You can select a specific Pokemon by name.
 
 The data is all extracted from the [Restful Pokemon API](https://pokeapi.co/) into a few different sensors.
 
@@ -153,7 +155,7 @@ That is called **sensor.pokemon_base_stats**. The key here is that it's state is
 
 There are two input selects created for this (one visible and one not). 
 The first one is the one that contains all 1008 Pokemon names.
-The second one merely sets the "mode" of the selection (Randon, Increment, Decrement, Name).
+The second one merely sets the "mode" of the selection (Random, Increment, Decrement, Name).
 I believe this could be removed but I set it up this way to test and just left it.
 
 You could just use a helper to create them, but as an example here is YAML in an include for input_select to set up the names.
