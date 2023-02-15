@@ -36,7 +36,7 @@ If you want the solution to work as is, you will need to be sure you have these 
 ## Sensors
 
 There are several sensors. One is used for the majority of the data for a specific Pokemon.
-I chose to call this one sensor.random_pokemon and it is defined in my included sensor.yaml as:
+I chose to call this one **sensor.random_pokemon** and it is defined in my included sensor.yaml as:
 
 ```
 ##
@@ -80,7 +80,7 @@ I chose to call this one sensor.random_pokemon and it is defined in my included 
 A second sensor is used for text descriptions as they are not maintained in the main REST call JSON that is returned.
 Instead, the main JSON has links to the text in many languages. 
 There is also additional information in this JSON that can be used.
-I choose to call this sesnor.pokemon_species:
+I choose to call this **sensor.pokemon_species**:
 
 ```
 - platform: rest
@@ -116,8 +116,8 @@ I choose to call this sesnor.pokemon_species:
     - order
 ```
 
-The third sensor is a template that contains the entire set of Pokemon names used to populate the input_select.
-I choose to call this sensor.pokedex:
+The third sensor is a template that contains the entire set of Pokemon names used to populate an input_select.
+I choose to call this **sensor.pokedex**:
 
 ```
 - platform: rest
@@ -133,7 +133,7 @@ You would note on the above sensors, the scan_interval is set really high.
 I do this because it is better to use an automation to trigger an update to the sensor so you can control the throttling.
 
 Lastly, while it is not needed really but made this easier for the charting of the statistics, I created a template sensor the isolates only the stats.
-That is called sesnor.pokemo_base_stats. The key here is that it's state is the maximum value of any one stat so as to calculate the relative value of them all.
+That is called **sensor.pokemon_base_stats**. The key here is that it's state is the maximum value of any one stat so as to calculate the relative value of them all.
 
 ```
 ###
@@ -157,7 +157,7 @@ The second one merely sets the "mode" of the selection (Randon, Increment, Decre
 I believe this could be removed but I set it up this way to test and just left it.
 
 You could just use a helper to create them, but as an example here is YAML in an include for input_select to set up the names.
-It is obviously called input_select.pokedex.
+It is obviously called **input_select.pokedex**.
 
 ```
 #############################
@@ -171,14 +171,15 @@ pokedex:
 You would note that it is empty. This is because the options will be populated by an automation at home assistant startup.
 We'll see this in the next section for automations.
 
-The other input_select was created with a helper and only serves to know what the mode is for grabbing a Pokemon. The helper looks like this:
+The other input_select was created with a helper and only serves to know what the mode is for grabbing a Pokemon. 
+This is called **input_select.pokemon_select_mode** and the helper looks like this:
 
 ![img/select_pokemon_mode.png](img/select_pokemon_mode.png)
 
 ## Automations and Scripts
 
-This first one is an Automation, it would basically re-populate the "options" in the input_select.pokedex with the data 
-from the sensor.pokedex:
+This first one is an *automation*, it would basically re-populate the "options" in the **input_select.pokedex** with the data 
+from the **sensor.pokedex**:
 
 ```
 alias: Build Pokedex Options
@@ -199,8 +200,8 @@ action:
         {{ pdex.poke | list }}
 mode: single
 ```
-The only one is a Script. This script would be called when one of the modes is chosen (Random, Increment, Decrement, Name).
-The script takes in the mode and updates the main sensor.random_pokemon based on that mode.
+The only other one is a *script*. This *script* would be called when one of the modes is chosen (Random, Increment, Decrement, Name).
+The script takes in the mode and updates the main **sensor.random_pokemon** based on that mode.
 
 ```
 alias: Get Pokemon
