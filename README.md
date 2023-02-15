@@ -244,6 +244,9 @@ The remaining stuff is the GUI. We have sensors with lots of data we can use.
 You can choose to do as you wish but in theory, one Pokemon could have 1 main image and 8 sprites with images that never change.
 I chose to download and I am not posting them here, but I can provide to anyone requested them.**
 
+**NOTE: Beacuse of all the information, this is designed as a single card panel. 
+You can pluck it apart and reorganize the various components should you wish to make this into something that would be OK for phones.**
+
 ```
 type: vertical-stack
 cards:
