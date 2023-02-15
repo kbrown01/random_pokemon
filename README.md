@@ -171,6 +171,10 @@ pokedex:
 You would note that it is empty. This is because the options will be populated by an automation at home assistant startup.
 We'll see this in the next section for automations.
 
+The other input_select was created with a helper and only serves to know what the mode is for grabbing a Pokemon. The helper looks like this:
+
+![img/select_pokemon_mode.png](img/select_pokemon_mode.png)
+
 ## Automations and Scripts
 
 This first one is an Automation, it would basically re-populate the "options" in the input_select.pokedex with the data 
