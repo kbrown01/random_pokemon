@@ -237,9 +237,9 @@ mode: single
 
 The remaining stuff is the GUI. We have sensors with lots of data we can use.
 
-NOTE: In this example code you will see that I have all the images stored locally on my Home Assistant server and I am not grabbing them from the web.
-YOu can choose to do as you wish but in theory, one Pokemon could have 1 main image and 8 sprites with images that never change.
-I chose to download and I am not posting them here, but I can provide to anyone requested them.
+**NOTE: In this example code you will see that I have all the images stored locally on my Home Assistant server and I am not grabbing them from the web.
+You can choose to do as you wish but in theory, one Pokemon could have 1 main image and 8 sprites with images that never change.
+I chose to download and I am not posting them here, but I can provide to anyone requested them.**
 
 ```
 type: vertical-stack
@@ -699,6 +699,14 @@ cards:
                             double_tap_action:
                               action: none
 ```
+A few notes on the GUI:
+
+
+- I choose to use the hold action (and not the tap action) for the top Mushroom "buttons". 
+This is probably not required as this entire screen is design for a computer. It is just my way.
+- I choose not to do an immediate Select Pokemon by Name action when the input_select for Pokemon changes. This is because I did not want to get into any loop condition. So you change the Pokemon name in the input_select and then hold the icon to execute it.
+- There are no really good options to display the charts in ider to compare. The best is the Apex radial bar charts but it looks like the information can only display "percentages" and not the actual values which make it worthless unless an alternate display of actual values is implemented which just wastes GUI space.
+- I colored the carts by 0%, 30%, 60%, 80% or the highest value so you can see the relative effectiveness. You can of course change these.
 
 
 
