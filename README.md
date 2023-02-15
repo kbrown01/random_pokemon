@@ -708,8 +708,8 @@ A few notes on the GUI:
 - I choose to use the hold action (and not the tap action) for the top Mushroom "buttons". 
 This is probably not required as this entire screen is design for a computer. It is just my way.
 - I choose not to do an immediate Select Pokemon by Name action when the input_select for Pokemon changes. This is because I did not want to get into any loop condition. So you change the Pokemon name in the input_select and then hold the icon to execute it.
-- There are no really good options to display the charts in ider to compare. The best is the Apex radial bar charts but it looks like the information can only display "percentages" and not the actual values which make it worthless unless an alternate display of actual values is implemented which just wastes GUI space.
-- I colored the carts by 0%, 30%, 60%, 80% or the highest value so you can see the relative effectiveness. You can of course change these.
+- There are no really good options to display the charts in order to compare them. The best is the Apex radialbar charts but it looks like the information can only display "percentages" and not the actual values which make it worthless unless an alternate display of actual values is implemented. This just wastes GUI space.
+- I colored the charts by 0%, 30%, 60%, 80% of the highest value so you can see the relative effectiveness. You can of course change these.
 
 
 
